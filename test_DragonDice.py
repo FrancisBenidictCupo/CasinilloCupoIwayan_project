@@ -1,5 +1,14 @@
 from DragonDice import update_score, play_round, check_winner
 
+def main():
+    test_update_score_player_normal()
+    test_update_score_player_penalty()
+    test_update_score_computer_even()
+    test_update_score_computer_odd()
+    test_check_winner_player_wins()
+    test_check_winner_computer_wins()
+    test_check_winner_no_winner()
+
 def test_update_score_player_normal():
     # Test for normal score update for the player
     assert update_score(10, 4, is_player=True) == 14
