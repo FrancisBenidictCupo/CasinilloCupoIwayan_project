@@ -36,8 +36,8 @@ def play_game():
               Welcome to 'Dragon', a dice game!
         
         In this game, a user and a computer enemy by the name
-        roll a die each turn. The game rules have become harder:
-
+         roll a die each turn.
+        
        [1] On rolling a 3 the player loses half of the total score.
        [2] The computer gets double points for rolling even numbers.
        [3] The computer gets another turn, if it rolls a 6!
@@ -56,16 +56,13 @@ def play_game():
         player_die_value = play_turn(is_player=True)
         player_score = update_score(player_score, player_die_value, is_player=True)
 
-        # Player loses 1 point at the end of their turn
         player_score = max(0, player_score - 1)
 
-        # Computer's turn
         computer_turns = 1
         while computer_turns > 0:
             computer_die_value = play_turn(is_player=False)
             computer_score = update_score(computer_score, computer_die_value)
 
-            # Computer gets an extra turn if it rolls a 6
             if computer_die_value == 6:
                 print("Computer rolls a 6 and gets an extra turn!")
                 computer_turns += 1
