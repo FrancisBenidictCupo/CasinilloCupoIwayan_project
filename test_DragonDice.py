@@ -27,3 +27,4 @@ def test_check_winner_computer_wins():
 def test_check_winner_no_winner():
     # Test when no one has won yet
     assert check_winner(50, 40, "Jean") is None
+    
