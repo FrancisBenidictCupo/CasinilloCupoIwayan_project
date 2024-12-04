@@ -1,4 +1,5 @@
 from DragonDice import update_score, play_round, check_winner
+import pytest
 
 def main():
     test_update_score_player_normal()
