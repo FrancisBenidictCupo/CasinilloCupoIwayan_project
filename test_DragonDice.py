@@ -1,4 +1,4 @@
-from DragonDice import update_score, play_round, check_winner
+from DragonDice import update_score, check_winner
 import pytest
 
 def main():
