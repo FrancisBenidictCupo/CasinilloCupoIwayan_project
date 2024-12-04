@@ -80,7 +80,7 @@ def play_game():
 def save_scores(username, player_score, computer_score, winner):
     with open("game_scores.csv", mode="a", newline="") as file:
         writer = csv.writer(file)
-        # Check if it's a new file, write header if necessary
+        
         file.seek(0)
         if file.tell() == 0:
             writer.writerow(["Username", "Player Score", "Computer Score", "Winner"])
