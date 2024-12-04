@@ -67,7 +67,6 @@ def play_game():
 
         display_scoreboard(player_score, computer_score)
 
-        # Determine winner and display
         if player_score >= 60:
             print(f"{username} wins!")
             save_scores(username, player_score, computer_score, "Player")
@@ -99,3 +98,6 @@ while True:
             exit()
         else:
             print("Error: Please type 'yes' or 'no'.")
+            
+if __name__ == "__main__":
+        main()
