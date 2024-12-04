@@ -1,5 +1,5 @@
+import csv
 from random import randint
-
 
 def update_score(score, die_value, is_player=False):
     if die_value == 3:
@@ -9,7 +9,6 @@ def update_score(score, die_value, is_player=False):
     else:
         return score + die_value * (2 if die_value % 2 == 0 else 1)
 
-
 def display_scoreboard(player_score, computer_score):
     print()
     print("#" * 50)
@@ -18,7 +17,6 @@ def display_scoreboard(player_score, computer_score):
     print("#" * 50)
     print()
 
-
 def play_turn(is_player=False):
     die_value = randint(1, 6)
     if is_player:
@@ -26,7 +24,6 @@ def play_turn(is_player=False):
     else:
         print(f"Computer rolls a {die_value}")
     return die_value
-
 
 def play_game():
     player_score = 0
@@ -70,13 +67,26 @@ def play_game():
 
         display_scoreboard(player_score, computer_score)
 
+        # Determine winner and display
         if player_score >= 60:
             print(f"{username} wins!")
+            save_scores(username, player_score, computer_score, "Player")
             break
         elif computer_score >= 60:
             print("Computer wins!")
+            save_scores(username, player_score, computer_score, "Computer")
             break
 
+def save_scores(username, player_score, computer_score, winner):
+    with open("game_scores.csv", mode="a", newline="") as file:
+        writer = csv.writer(file)
+        # Check if it's a new file, write header if necessary
+        file.seek(0)
+        if file.tell() == 0:
+            writer.writerow(["Username", "Player Score", "Computer Score", "Winner"])
+        
+        writer.writerow([username, player_score, computer_score, winner])
+        print(f"Scores saved to 'game_scores.csv'. {winner} is the winner!")
 
 while True:
     play_game()
@@ -89,6 +99,3 @@ while True:
             exit()
         else:
             print("Error: Please type 'yes' or 'no'.")
-
-if __name__ == "__main__":
-    main()
