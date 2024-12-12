@@ -1,5 +1,5 @@
 #CasinilloCupoIwayan_project
-# DRAGON DICE GAME
+# DRAGON DICE GAME 2.0
 #### Video Demo: <https://youtu.be/1jna3x-qV5s>
 #### Description: 
 In the Dragon Dice Game, the player and the computer play turn after turn with a six-sided dice where the player tries to win by scoring 60 points before the computer 
